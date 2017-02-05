@@ -25,3 +25,9 @@ Top 10 genre amony male
 Top 10 genre among different age ranges with interval of 20
 
 <img width="500" alt="age" src="https://cloud.githubusercontent.com/assets/15256661/22628546/c6b5f1f6-eba3-11e6-805b-58b45dc2e4b8.png">
+
+Age 20~40 have the biggest number of listeners
+Top 10 genre between age 20~40 separated by gender
+
+<img width="500" alt="age" src="https://cloud.githubusercontent.com/assets/15256661/22628775/3840c9f0-eba8-11e6-855e-e04a883d41d9.png">
+
