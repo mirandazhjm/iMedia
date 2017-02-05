@@ -65,3 +65,16 @@ WHERE L.profile_id = U.profile_id AND L.artist_seed = AR.artist_id
 Group by AR.genre
 Order by count(*)
 LIMIT 10
+
+-- top 10 genre between 20<=age<40 separate between female and male
+CREATE TABLE AGE20 (genre,FEMALE,MALE) AS
+SELECT AR.genre, count(*) filter (where U.gender='FEMALE') as "FEMALE" ,
+    count(*) filter (where U.gender='MALE') as "MALE" 
+FROM public.listens AS L, public.users AS U, public.artists AS AR
+WHERE L.profile_id = U.profile_id AND L.artist_seed = AR.artist_id
+      AND AR.genre <> 'NA' AND U.gender <> 'NA' and U.age>=20 and U.age<40
+Group by AR.genre
+Order by count(*) DESC
+LIMIT 10
+
+COPY AGE20 TO '/tmp/age20.csv' DELIMITER ',' CSV HEADER;
